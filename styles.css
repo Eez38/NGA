@@ -1,0 +1,111 @@
+#login{
+    text-align: right;
+    font-family: "Arial", Arial, sans-serif;
+    padding-right: 13px;
+    padding-top: 8px;
+}
+
+#gradient{
+    width:0;
+    height:150px;
+    margin:0 auto;
+    border-radius:100%;
+    -webkit-box-shadow: 0 50px 200px 150px rgba(255, 255, 255, 0.93);
+    -moz-box-shadow: 0 50px 200px 150px rgba(255, 255, 255, 0.93);
+    box-shadow: 0 50px 200px 150px rgba(255, 255, 255, 0.93);
+}
+.logo{
+    display: block;
+    margin: 0 auto;
+    padding:13px;
+    width:335px;
+    box-sizing:border-box;
+    border-radius:6px;
+}
+.header{
+    text-align: center;
+    font-family: "Arial", Arial, sans-serif;
+}
+.subheader{
+    text-align: center;
+    font-family: "Arial", Arial, sans-serif;
+}
+
+/*Search styles*/
+.searchbox{
+    padding:13px;
+    width:400px;
+    /*margin:100px auto;*/
+    margin: auto;
+    box-sizing:border-box;
+    border-radius:6px;
+}
+input[type="search"]{
+    width:285px;
+    height:50px;
+    padding:15px;
+    border-radius:6px;
+    border: thin;
+    /*color:#939393;*/
+    font-weight:500;
+    /*background-color:#fffbf8;*/
+}
+button[type="submit"]#searchsubmit{
+    width:35px;
+    height:30px;
+    background-image:url(images/search-btn.png);
+    background-repeat: no-repeat;
+    background-position: 10px 5px;
+    background-color:transparent;
+    background-size:20px 20px;
+    border:none;
+    cursor:pointer;
+}
+
+/*login styles*/
+form.loginform {
+    border: 3px solid #f1f1f1;
+    width: 294px;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+button.loginbtn{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+button#cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+    color: white;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+.container {
+    padding: 16px;
+    position: relative;
+}
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+#loginframe{
+    border: none;
+    background: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+}
