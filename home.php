@@ -1,3 +1,17 @@
+<?php
+//session_start();
+include("config.php");
+include("login.php");
+
+//echo $user = $_REQUEST['username'];
+//echo $password = $_REQUEST['password'];
+
+if(isset($_SESSION['login_user']) && !empty($_SESSION['login_user'])) {
+    echo "<script> document.getElementById('searchbox').style.visibility = 'visible'; </script>";
+    echo "<script> document.getElementById('login').style.visibility = 'hidden'; </script>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,9 +30,10 @@
     <img class="logo" src="images/flag.gif" alt="home">
     <h1 class="header"> NGA Addressing </h1>
     <h4 class="subheader"> A search engine for the streets of Nigeria </h4>
-    <form class="searchbox" action="">
-        <input type="search" placeholder="Search" />
+    <form id="searchbox" action="results.php" method="get">
+        <input type="search" name="search" placeholder="Search" />
         <button id="searchsubmit" type="submit" value="search">&nbsp;</button>
     </form>
+    <p id="footer"> Microsystems International &copy;</p>
 </body>
 </html>

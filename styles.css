@@ -1,6 +1,8 @@
+body{
+    font-family: "Arial", Arial, sans-serif;
+}
 #login{
     text-align: right;
-    font-family: "Arial", Arial, sans-serif;
     padding-right: 13px;
     padding-top: 8px;
 }
@@ -24,21 +26,21 @@
 }
 .header{
     text-align: center;
-    font-family: "Arial", Arial, sans-serif;
 }
 .subheader{
     text-align: center;
-    font-family: "Arial", Arial, sans-serif;
 }
 
 /*Search styles*/
-.searchbox{
+#searchbox{
     padding:13px;
     width:400px;
     /*margin:100px auto;*/
     margin: auto;
     box-sizing:border-box;
     border-radius:6px;
+    padding-bottom: 70px;
+    display: none;
 }
 input[type="search"]{
     width:285px;
@@ -108,4 +110,63 @@ span.psw {
     top: 0;
     right: 0;
     visibility: hidden;
+}
+.results{
+    width: 90%;
+    /*border: 1px solid black;*/
+    margin: auto;
+    border-collapse: collapse;
+    text-align: left;
+    padding: 20px;
+    font-size: 14px;
+
+}
+.results th{
+    padding: 3px;
+    vertical-align: top;
+    border: 1px solid black;
+}
+.results td{
+    width: 10%;
+    padding: 5px;
+    vertical-align: top;
+}
+.results td:nth-child(even) {
+    background: #ccc;
+}
+.results td:nth-child(odd) {
+    background: #eee;
+}
+
+#headerbar img.logo{
+    width: 100px;
+    margin: 0px;
+    position: absolute;
+}
+
+#headerbar h4{
+    padding-left: 100px;
+    position: absolute;
+}
+
+#headerbar{
+    height: 50px;
+    padding-top: 0px;
+    position: absolute;
+    top: 0;
+    width: 25%;
+}
+
+#resultbody{
+    padding-top: inherit;
+    margin: auto;
+}
+
+#footer{
+    position: absolute ;
+    bottom: 0px;
+    padding-left: 15px;
+    padding-top: 15px;
+    text-decoration-line: underline;
+    /*z-index: -1;*/
 }
