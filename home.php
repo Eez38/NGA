@@ -1,15 +1,6 @@
 <?php
-//session_start();
-include("config.php");
+session_start();
 include("login.php");
-
-//echo $user = $_REQUEST['username'];
-//echo $password = $_REQUEST['password'];
-
-if(isset($_SESSION['login_user']) && !empty($_SESSION['login_user'])) {
-    echo "<script> document.getElementById('searchbox').style.visibility = 'visible'; </script>";
-    echo "<script> document.getElementById('login').style.visibility = 'hidden'; </script>";
-}
 ?>
 
 <!DOCTYPE html>
@@ -23,17 +14,30 @@ if(isset($_SESSION['login_user']) && !empty($_SESSION['login_user'])) {
 </head>
 <body>
     <div id="login">
-        <input type="button" value="Sign In" id="loginlink" />
+        <input type="button" value="Sign In" id="loginlink"/>
     </div>
-    <iframe src="login.html" height="400" width="300" id="loginframe"></iframe>
+    <form id="logout" action="logout.php">
+        <input type="submit" value="Sign Out" id="logoutlink" style="visibility: hidden"/>
+    </form>
+    <iframe name="loginframe" src="login.html" height="400" width="300" id="loginframe"></iframe>
     <div id="gradient"></div>
     <img class="logo" src="images/flag.gif" alt="home">
     <h1 class="header"> NGA Addressing </h1>
     <h4 class="subheader"> A search engine for the streets of Nigeria </h4>
     <form id="searchbox" action="results.php" method="get">
-        <input type="search" name="search" placeholder="Search" />
-        <button id="searchsubmit" type="submit" value="search">&nbsp;</button>
+        <input id="searchtype" type="search" name="search" placeholder="Search" disabled/>
+        <button id="searchsubmit" type="submit" value="search" disabled>&nbsp;</button>
     </form>
+    <?php
+    if(isset($_SESSION['login_user']) && !empty($_SESSION['login_user'])) {
+        echo "<script type=\"text/javascript\">
+            document.getElementById('loginlink').style.visibility = 'hidden';
+            document.getElementById('logoutlink').style.visibility = 'visible';
+            document.getElementById('searchtype').disabled = false;
+            document.getElementById('searchsubmit').disabled = false;
+        </script>";
+    }
+    ?>
     <p id="footer"> Microsystems International &copy;</p>
 </body>
 </html>

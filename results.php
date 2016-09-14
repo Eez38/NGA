@@ -79,6 +79,10 @@
                         do{
                             if($result = mysqli_store_result($connector)){
                                 while( $row = mysqli_fetch_row($result)) {
+                                    $pscduk = str_split($row[8]);
+                                    $pscdus = str_split($row[9]);
+//                                    $uk = $pscduk[0] + $pscduk[1] + " " + $pscduk[2] + $pscduk[3] + $pscduk[4] + " " + $pscduk[5] + $pscduk[6];
+//                                    $us = $pscdus[0] + $pscdus[1] + " " + $pscdus[2] + $pscdus[3] + $pscdus[4] + " " + $pscdus[5] + $pscdus[6] + $pscdus[7];
                                     echo
                                     "<tr>
                                     <td>{$row[0]}</td>
