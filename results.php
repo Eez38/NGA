@@ -74,15 +74,20 @@
                 </thead>
                 <tbody>
                     <?php
-//                    $result = mysqli_query($connector, "SELECT * FROM STREETS");
                     if(mysqli_multi_query($connector, $query)){
                         do{
                             if($result = mysqli_store_result($connector)){
                                 while( $row = mysqli_fetch_row($result)) {
                                     $pscduk = str_split($row[8]);
                                     $pscdus = str_split($row[9]);
-//                                    $uk = $pscduk[0] + $pscduk[1] + " " + $pscduk[2] + $pscduk[3] + $pscduk[4] + " " + $pscduk[5] + $pscduk[6];
-//                                    $us = $pscdus[0] + $pscdus[1] + " " + $pscdus[2] + $pscdus[3] + $pscdus[4] + " " + $pscdus[5] + $pscdus[6] + $pscdus[7];
+//                                    print_r($pscduk);
+                                    $uk = "{$pscduk[0]}{$pscduk[1]}&nbsp;{$pscduk[2]}{$pscduk[3]}{$pscduk[4]}&nbsp;{$pscduk[5]}{$pscduk[6]}";
+                                    if(count($pscdus)==7){
+                                        $us = "{$pscdus[0]}{$pscdus[1]}&nbsp;{$pscdus[2]}{$pscdus[3]}{$pscdus[4]}&nbsp;{$pscdus[5]}{$pscdus[6]}";
+                                    }
+                                    else if(count($pscdus)==8){
+                                        $us = "{$pscdus[0]}{$pscdus[1]}&nbsp;{$pscdus[2]}{$pscdus[3]}{$pscdus[4]}&nbsp;{$pscdus[5]}{$pscdus[6]}{$pscdus[7]}";
+                                    }
                                     echo
                                     "<tr>
                                     <td>{$row[0]}</td>
@@ -93,8 +98,8 @@
                                     <td>{$row[5]}</td>
                                     <td>{$row[6]}</td>
                                     <td>{$row[7]}</td>
-                                    <td>{$row[8]}</td>
-                                    <td>{$row[9]}</td>
+                                    <td>{$uk}</td>
+                                    <td>{$us}</td>
                                 </tr>\n";
                                 }
                                 mysqli_free_result($result);
