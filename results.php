@@ -95,6 +95,14 @@
         </div>
         <div id="resultbody">
             <h1 class="subheader"> Search Results </h1>
+            <?php
+                if($search){
+                    echo "<h5 class='subheader'>Showing Results for $search</h5>";
+                }
+                else{
+                    echo "<h5 class='subheader'>Showing All Possible Results</h5>";
+                }
+            ?>
             <form id="resultsearch" action="results.php" method="get">
                 <input id="searchtype" type="search" name="search" placeholder="Search"/>
                 <button id="searchsubmit" type="submit" value="search">&nbsp;</button>
