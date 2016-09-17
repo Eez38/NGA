@@ -168,7 +168,7 @@
         <div class="text-center">
             <ul class="pagination">
                 <?php
-                $pages = $total/10;
+                $pages = round($total/10, 0);
 //                    $count/10;
 
                 if(isset($_REQUEST["current"])){
