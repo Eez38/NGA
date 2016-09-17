@@ -102,6 +102,8 @@
                 else{
                     echo "<h5 class='subheader'>Showing All Possible Results</h5>";
                 }
+                echo "<h5 class='subheader'>Found $total</h5>";
+
             ?>
             <form id="resultsearch" action="results.php" method="get">
                 <input id="searchtype" type="search" name="search" placeholder="Search"/>
