@@ -1,5 +1,6 @@
 body{
     font-family: "Arial", Arial, sans-serif;
+    /*"Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 }
 #login{
     text-align: right;
@@ -133,7 +134,9 @@ span.psw {
 .results th{
     padding: 3px;
     vertical-align: top;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
+    background: #0d9117;
+    color: azure;
 }
 .results td{
     width: 10%;
@@ -141,10 +144,10 @@ span.psw {
     vertical-align: top;
 }
 .results td:nth-child(even) {
-    background: #ccc;
+    background: #f7f7f7;
 }
 .results td:nth-child(odd) {
-    background: #eee;
+    background: #fdfdfd;
 }
 
 #headerbar img.logo{
@@ -171,6 +174,17 @@ span.psw {
     margin: auto;
 }
 
+#resultsearch {
+    width:350px;
+    margin: auto;
+    box-sizing:border-box;
+    border-radius:6px;
+    align-content: center;
+    padding-bottom: 15px;
+    /*border-bottom-color: #4CAF50;*/
+    /*border: #0ebe17;*/
+}
+
 #footer{
     /*position: absolute ;*/
     position: relative;
@@ -180,3 +194,4 @@ span.psw {
     text-decoration-line: underline;
     /*z-index: -1;*/
 }
+
