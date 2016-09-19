@@ -40,27 +40,21 @@
         $query .= "SELECT * FROM STREETS WHERE pscdusfrm = '$search';";
 
 
-        $countquery = mysqli_query($connector, "SELECT COUNT(*) FROM STREETS WHERE area = '$search';");
+        $countquery = mysqli_query($connector, "SELECT COUNT(*) FROM STREETS WHERE area LIKE '%$search%';"); //= '$search';");
         $countquery = mysqli_fetch_assoc($countquery)["COUNT(*)"];
         $total = $countquery;
-        $countquery = mysqli_query($connector, "SELECT COUNT(*) FROM STREETS WHERE area_id = '$search';");
+        $countquery = mysqli_query($connector, "SELECT COUNT(*) FROM STREETS WHERE area_id LIKE '%$search%';");//= '$search';");
         $countquery = mysqli_fetch_assoc($countquery)["COUNT(*)"];
         $total = $total + $countquery;
-        $countquery = mysqli_query($connector, "SELECT COUNT(*) FROM STREETS WHERE streetname = '$search';");
+        $countquery = mysqli_query($connector, "SELECT COUNT(*) FROM STREETS WHERE streetname LIKE '%$search%';"); //= '$search';");
         $countquery = mysqli_fetch_assoc($countquery)["COUNT(*)"];
         $total = $total + $countquery;
-        $countquery = mysqli_query($connector, "SELECT COUNT(*) FROM STREETS WHERE pscdukfrm = '$search';");
+        $countquery = mysqli_query($connector, "SELECT COUNT(*) FROM STREETS WHERE pscdukfrm LIKE '%$search%';"); //= '$search';");
         $countquery = mysqli_fetch_assoc($countquery)["COUNT(*)"];
         $total = $total + $countquery;
-        $countquery = mysqli_query($connector, "SELECT COUNT(*) FROM STREETS WHERE pscdusfrm = '$search';");
+        $countquery = mysqli_query($connector, "SELECT COUNT(*) FROM STREETS WHERE pscdusfrm LIKE '%$search%';"); //= '$search';");
         $countquery = mysqli_fetch_assoc($countquery)["COUNT(*)"];
         $total = $total + $countquery;
-
-//        $query = "SELECT * FROM STREETS WHERE area LIKE '%$search%';";
-//        $query .= "SELECT * FROM STREETS WHERE area_id LIKE '%$search%';";
-//        $query .= "SELECT * FROM STREETS WHERE streetname LIKE '%$search%';";
-//        $query .= "SELECT * FROM STREETS WHERE pscdukfrm LIKE '%$search%';";
-//        $query .= "SELECT * FROM STREETS WHERE pscdusfrm LIKE '%$search%';";
     }
 
     $count = 0;
