@@ -10,22 +10,10 @@
         $count = mysqli_num_rows($result);
         if ($count == 1){
             $_SESSION['login_user'] = $user;
-            echo "<script 
-                    type='text/javascript'> window.frameElement.style.visibility = 'hidden'; 
-                    location.reload();
-                </script>";
+            header("Refresh:0");
         }
         else {
             $error = "Your Login Name or Password is invalid";
         }
     }
-//    if(isset($_SESSION['login_user']) && !empty($_SESSION['login_user'])) {
-//        echo "<script>
-//                window.frameElement.style.visibility = 'hidden';
-//                login();
-////                window.document.getElementById('searchbox').style.visibility = 'visible';
-//                window.document.getElementById('login').style.visibility = 'hidden';
-////                parent.document.getElementById('searchbox').style.visibility = 'visible';
-//            </script>";
-//    }
 ?>

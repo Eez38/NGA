@@ -100,13 +100,16 @@ button#cancelbtn {
 .container {
     padding: 16px;
     position: relative;
+    width: 295px;
 }
 span.psw {
     float: right;
     padding-top: 16px;
 }
 #loginframe{
-    border: none;
+    width: 300px;
+    height: 400px;
+    border: black;
     background: white;
     position: absolute;
     top: 0;
